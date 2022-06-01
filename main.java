@@ -2,11 +2,50 @@ import java.util.Scanner;
 
 public class main {
 	public static void main(String[] args) {
+		int me = 1;
+		int masu = 30;
+		int sai = 0;
+		boolean goal = false;
 		Scanner stdIn = new Scanner(System.in);
-
-		System.out.println("ZZZZZZZZZZ");
-			
-		int com = stdIn.nextInt();
+		
+		while(true) {
+		
+		for(int i = 1; i <= me - 1; i++) {
+			System.out.print("Z");
+		}			
+		System.out.print("¡");
+		for(int i = 1; i <= masu - me; i++) {
+			System.out.print("Z");
+		}	
+		System.out.println("©ƒS[ƒ‹");
+		if(goal == true) {
+			System.out.println("ƒQ[ƒ€ƒNƒŠƒAII");
+			break;
+		}
+		System.out.println("‚³‚¢‚±‚ë‚ğU‚ë‚¤II@1F‚³‚¢‚±‚ë‚ğU‚é@2FƒXƒ^[ƒg‚É–ß‚é");
+		int choice = stdIn.nextInt();
+		switch(choice) {
+		case 1:
+			System.out.println("‚³‚¢‚±‚ë‚Ì–Ú‚Í...");
+			sai = (int)Math.ceil(Math.random() *  6);
+			System.out.println(sai + "‚Å‚·I");
+			me = me + sai;
+			if(me > masu) {
+				me =  masu - (me - masu);
+			}else if(me == masu) {
+				goal = true;
+			}
+			break;
+		case 2:
+			System.out.println("Å‰‚É–ß‚è‚Ü‚·");
+			me = 1;
+			break;
+		default:
+			System.out.println("1‚©2‚ğ“ü—Í‚µ‚ÄI");
+			break;	
+		}
+		
+		}
 			
 		
 		System.exit(0);
